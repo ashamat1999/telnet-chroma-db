@@ -1,0 +1,6 @@
+To run:
+
+With docker installed, use:
+    docker-compose up --build
+
+Use http://127.0.0.1:9411/zipkin/ to get spans and logs.

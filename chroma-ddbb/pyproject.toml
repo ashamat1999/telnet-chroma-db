@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "chroma-ddbb"
+version = "0.1.0"
+description = "Chroma DDBB project"
+authors = ["Jose Ashamat Jaimes"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+chromadb = "^1.3.5"
+google-generativeai = "^0.8.5"
+langchain-community = "^0.4.1"
+pypdf = "^6.4.0"
+pytesseract = "^0.3.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
