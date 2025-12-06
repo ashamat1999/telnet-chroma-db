@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "aeceb06b-4fac-4d2b-8277-4a17807c38ee",
+		"name": "ADK api server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36603912"
+	},
+	"item": [
+		{
+			"name": "Get All models",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/list-apps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"list-apps"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8000/list-apps"
+			},
+			"response": []
+		},
+		{
+			"name": "Run agent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"appName\": \"my_sample_agent\",\r\n    \"userId\": \"u_123\",\r\n    \"sessionId\": \"s_abc\",\r\n    \"newMessage\": {\r\n      \"role\": \"user\",\r\n      \"parts\": [{\"text\": \"What is the capital of France?\"}]\r\n    }\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/run",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"run"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/run \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"appName\": \"my_sample_agent\",\r\n    \"userId\": \"u_123\",\r\n    \"sessionId\": \"s_abc\",\r\n    \"newMessage\": {\r\n      \"role\": \"user\",\r\n      \"parts\": [{\"text\": \"What is the capital of France?\"}]\r\n    }\r\n  }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Session",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/apps/my_sample_agent/users/u_123/sessions/s_abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"apps",
+						"my_sample_agent",
+						"users",
+						"u_123",
+						"sessions",
+						"s_abc"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET http://localhost:8000/apps/my_sample_agent/users/u_123/sessions/s_abc"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a session",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/apps/rag_agent/users/u_123/sessions/s_abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apps",
+						"rag_agent",
+						"users",
+						"u_123",
+						"sessions",
+						"s_abc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
